@@ -1,6 +1,7 @@
 import { jobs } from "../../../data/jobs";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import Link from "next/link";
 
 type JobPageProps = {
   params: Promise<{
@@ -65,9 +66,12 @@ export default async function JobPage({ params }: JobPageProps) {
         </p>
 
         {/* CTA */}
-        <button className="w-full md:w-auto bg-teal-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 transition">
+        <Link
+          href={`/jobs/${job.slug}/apply`}
+          className="mt-8 w-full md:w-auto bg-teal-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-600 transition"
+        >
           Apply Now
-        </button>
+        </Link>
       </div>
     </main>
   );
