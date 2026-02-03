@@ -60,7 +60,7 @@ export default async function JobPage({ params }: JobPageProps) {
 
         <button
           className="mt-8 w-full md:w-auto bg-blue-600 text-white px-6 py-3 rounded-lg font-medium
-                     hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+             hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
         >
           Apply Now
         </button>
