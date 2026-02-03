@@ -8,18 +8,26 @@ type JobCardProps = {
 export default function JobCard({ job }: JobCardProps) {
   return (
     <Link href={`/jobs/${job.slug}`}>
-      <div className="border border-gray-300 rounded-lg p-4 bg-white shadow-sm hover:shadow-md transition cursor-pointer">
-        <h2 className="text-xl font-bold text-gray-900">{job.title}</h2>
-        <p className="text-gray-700">
-          {job.company} • {job.location}
-        </p>
-        <p className="text-sm text-gray-500 mt-2">{job.type}</p>
+      <div className="flex flex-col h-full min-h-[300px] border border-neutral-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-lg transition-transform duration-200 ease-in-out hover:-translate-y-1 cursor-pointer">
+        {/* Job title */}
+        <h2 className="text-2xl font-semibold text-neutral-900 mb-2">
+          {job.title}
+        </h2>
 
-        <div className="flex flex-wrap gap-2 mt-2">
+        {/* Company */}
+        <p className="text-neutral-700 mb-1">{job.company}</p>
+
+        {/* Location & type */}
+        <p className="text-neutral-500 text-sm">
+          {job.location} • {job.type}
+        </p>
+
+        {/* Tech stack badges */}
+        <div className="flex flex-wrap gap-2 mt-4 mt-auto">
           {job.stack.map((tech) => (
             <span
               key={tech}
-              className="bg-blue-200 text-blue-900 px-2 py-1 rounded text-xs"
+              className="bg-teal-50 text-teal-600 px-2 py-1 rounded-md text-xs font-medium"
             >
               {tech}
             </span>
